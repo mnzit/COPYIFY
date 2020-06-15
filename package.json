@@ -21,7 +21,8 @@
         "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json|ts|tsx)\"",
         "format": "npm run prettier -- --write",
         "check-format": "npm run prettier -- --list-different",
-        "validate": "npm-run-all --parallel check-format lint test build"
+        "validate": "npm-run-all --parallel check-format lint test build",
+        "setup": "npm install && npm run validate"
     },
     "eslintConfig": {
         "extends": "react-app"
