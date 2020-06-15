@@ -6,20 +6,22 @@
         "@testing-library/jest-dom": "^4.2.4",
         "@testing-library/react": "^9.3.2",
         "@testing-library/user-event": "^7.1.2",
+        "prop-types": "^15.7.2",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
-        "react-scripts": "3.4.1"
+        "react-scripts": "3.4.1",
+        "styled-components": "^5.1.1"
     },
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
-        "test": "react-scripts test",
+        "test": "jest",
         "eject": "react-scripts eject",
         "lint": "eslint . --ignore-path .gitignore .",
         "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json|ts|tsx)\"",
         "format": "npm run prettier -- --write",
         "check-format": "npm run prettier -- --list-different",
-        "validate": "npm-run-all --parallel check-format lint build"
+        "validate": "npm-run-all --parallel check-format lint test build"
     },
     "eslintConfig": {
         "extends": "react-app"
@@ -37,6 +39,7 @@
         ]
     },
     "devDependencies": {
+        "@types/jest": "^26.0.0",
         "eslint-config-prettier": "^6.11.0",
         "eslint-plugin-react": "^7.20.0",
         "husky": "^4.2.5",
