@@ -1,8 +1,15 @@
 import React from 'react'
-import './App.css'
+import styled from 'styled-components'
+import Player from './components/player'
+
+const AppWrapper = styled.div``
 
 function App() {
-    return <div className='App'></div>
+    return (
+        <AppWrapper>
+            <Player></Player>
+        </AppWrapper>
+    )
 }
 
 export default App

@@ -1,8 +1,8 @@
 [![Build Status](https://travis-ci.com/enahsor/COPYIFY.svg?branch=master)](https://travis-ci.com/enahsor/COPYIFY)
 
 # COPYIFY
-Copyify is a Spotify Clone built using React, Redux, MongoDB, ElasticSearch and NodeJS.
 
+Copyify is a Spotify Clone built using React, Redux, MongoDB, ElasticSearch and NodeJS.
 
 ## Contributing
 
@@ -13,6 +13,3 @@ Copyify is a Spotify Clone built using React, Redux, MongoDB, ElasticSearch and 
 5. Merge Branch Into Master & Delete It.
 6. Stage. Commit. Push.
 7. Make Pull Request.
-
-
-
