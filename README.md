@@ -4,6 +4,12 @@
 
 Copyify is a Spotify Clone built using React, Redux, MongoDB, ElasticSearch and NodeJS.
 
+## Scripts Available
+
+- start `yarn start` or `npm start`
+- build `yarn build` or `npm build`
+- test `yarn test` or `npm t`
+
 ## Contributing
 
 1. Fork Repository.
