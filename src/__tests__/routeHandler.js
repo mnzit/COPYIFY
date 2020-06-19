@@ -1,8 +1,8 @@
 import React from 'react'
-import Player from '../player.js'
+import RouteHandler from '../components/navigator/routeHandler'
 import { shallow } from 'enzyme'
 
 /* SMOKE TEST */
 test('renders without crashing', () => {
-    shallow(<Player />)
+    shallow(<RouteHandler />)
 })

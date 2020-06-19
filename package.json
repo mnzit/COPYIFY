@@ -12,6 +12,7 @@
         "prop-types": "^15.7.2",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
+        "react-router-dom": "^5.2.0",
         "react-scripts": "3.4.1",
         "react-test-renderer": "^16.13.1",
         "styled-components": "^5.1.1"
@@ -20,6 +21,7 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
+        "test:changed": "npm run test -o",
         "eject": "react-scripts eject",
         "lint": "eslint . --ignore-path .gitignore .",
         "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json|ts|tsx)\"",

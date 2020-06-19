@@ -1,8 +1,8 @@
 import React from 'react'
+import Search from '../components/navigator/pages/search'
 import { shallow } from 'enzyme'
-import Navigator from '../navigator'
 
 /* SMOKE TEST */
 test('renders without crashing', () => {
-    shallow(<Navigator />)
+    shallow(<Search />)
 })

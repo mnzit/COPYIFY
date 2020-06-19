@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const PlayerWrapper = styled.div`
+    /*
     position: absolute;
     left: 0;
     right: 0;
@@ -15,6 +16,7 @@ const PlayerWrapper = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+*/
 `
 
 export default function Player() {
