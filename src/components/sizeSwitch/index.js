@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const Wrapper = styled.div`
     width: 100px;
@@ -9,10 +10,14 @@ const Wrapper = styled.div`
     }
 `
 
-export default function SizeSwitch() {
+export default function SizeSwitch({ inverseMobile }) {
     const handleEvent = () => {
-        console.log('CLICK EVENT GENERATED')
+        inverseMobile()
     }
 
     return <Wrapper onClick={handleEvent}>SWITCH</Wrapper>
+}
+
+SizeSwitch.propTypes = {
+    inverseMobile: PropTypes.func.isRequired,
 }
