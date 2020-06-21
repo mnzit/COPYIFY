@@ -1,16 +1,24 @@
 import React from 'react'
 import styled from 'styled-components'
-/*import Player from './components/player/index'*/
+import Player from './components/player/index'
 import Navigator from './components/navigator/index'
+import SizeSwitch from './components/sizeSwitch/index'
+import { animated } from 'react-spring'
 
-const AppWrapper = styled.div``
+const AppWrapper = styled(animated.div)`
+    width: 100vw;
+    background-color: purple;
+`
 
 function App() {
     return (
-        <AppWrapper>
-            <Navigator />
-            {/*<Player />*/}
-        </AppWrapper>
+        <>
+            <SizeSwitch />
+            <AppWrapper>
+                <Navigator />
+                <Player />
+            </AppWrapper>
+        </>
     )
 }
 
