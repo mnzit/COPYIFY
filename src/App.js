@@ -9,6 +9,7 @@ import React, { useState, useEffect } from 'react'
 const AppWrapper = styled(animated.div)`
     width: 100vw;
     background-color: green;
+    position: relative;
 `
 
 function App() {
