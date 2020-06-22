@@ -4,7 +4,7 @@ import Navigator from './navigator'
 import SizeSwitch from './sizeSwitch'
 import { animated, useSpring } from 'react-spring'
 import { GlobalStyles } from '../globalStyles'
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { setMobileSize } from '../actions'
 
@@ -15,9 +15,12 @@ const AppWrapper = styled(animated.div)`
 `
 
 function App() {
-    const mobileSize = useSelector((state) => state.mobileSize)
+    const mobileSize = useSelector((state) => state.size)
     const mobile = useSelector((state) => state.mobile)
     const dispatch = useDispatch()
+
+    console.log(mobile)
+    console.log(mobileSize)
 
     if (window.innerWidth < mobileSize) {
         dispatch(setMobileSize(window.innerWidth))
@@ -27,14 +30,10 @@ function App() {
         width: mobile ? `${(mobileSize / window.innerWidth) * 100}vw` : `100vw`,
     })
 
-    useEffect(() => {
-        console.log(`mobile width: ${mobileSize}`)
-        console.log(`window width: ${window.innerWidth}`)
-    }, [mobileSize])
-
     return (
         <>
             <GlobalStyles />
+            {/*window.innerWidth <= mobileSize ? '' : <SizeSwitch />*/}
             <SizeSwitch />
             <AppWrapper style={props}>
                 <Navigator />

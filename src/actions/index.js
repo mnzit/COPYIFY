@@ -3,7 +3,7 @@ export const inverseMobileAction = () => ({
 })
 
 export const setMobileSize = (size) => ({
-    type: 'SET_MOBILE_SIZE',
+    type: 'SET_SIZE',
     payload: {
         size: size,
     },
