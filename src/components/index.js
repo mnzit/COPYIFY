@@ -1,10 +1,12 @@
 import styled from 'styled-components'
-import Player from './components/player/index'
-import Navigator from './components/navigator/index'
-import SizeSwitch from './components/sizeSwitch/index'
+import Player from './player'
+import Navigator from './navigator'
+import SizeSwitch from './sizeSwitch'
 import { animated, useSpring } from 'react-spring'
-import { GlobalStyles } from './globalStyles'
-import React, { useState, useEffect } from 'react'
+import { GlobalStyles } from '../globalStyles'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { setMobileSize } from '../actions'
 
 const AppWrapper = styled(animated.div)`
     width: 100vw;
@@ -13,20 +15,17 @@ const AppWrapper = styled(animated.div)`
 `
 
 function App() {
-    const [mobile, setMobile] = useState(false)
-    const [mobileSize, setMobileSize] = useState(411)
+    const mobileSize = useSelector((state) => state.mobileSize)
+    const mobile = useSelector((state) => state.mobile)
+    const dispatch = useDispatch()
 
     if (window.innerWidth < mobileSize) {
-        setMobileSize(window.innerWidth)
+        dispatch(setMobileSize(window.innerWidth))
     }
 
     const props = useSpring({
         width: mobile ? `${(mobileSize / window.innerWidth) * 100}vw` : `100vw`,
     })
-
-    const inverseMobile = () => {
-        setMobile(!mobile)
-    }
 
     useEffect(() => {
         console.log(`mobile width: ${mobileSize}`)
@@ -36,7 +35,7 @@ function App() {
     return (
         <>
             <GlobalStyles />
-            <SizeSwitch inverseMobile={inverseMobile} />
+            <SizeSwitch />
             <AppWrapper style={props}>
                 <Navigator />
                 <Player />
