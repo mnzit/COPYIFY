@@ -8,7 +8,7 @@ import Shuffle from './shuffle'
 
 const Wrapper = styled.div`
     width: 100%;
-    max-width: 500px;
+    max-width: 400px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,7 +19,7 @@ export default function Controls() {
         <Wrapper>
             <Shuffle />
             <Previous />
-            <Play playing={true} />
+            <Play playing={false} />
             <Next />
             <Repeat />
         </Wrapper>

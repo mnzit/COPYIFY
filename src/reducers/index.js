@@ -15,6 +15,11 @@ export default (state, { type, payload }) => {
                 ...state,
                 mobileHeight: payload.height,
             }
+        case 'INVERSE_PLAYING':
+            return {
+                ...state,
+                playing: !state.playing,
+            }
         default:
             return state
     }

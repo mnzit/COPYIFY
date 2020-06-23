@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { animated, useSpring } from 'react-spring'
-import { inverseMobileAction } from '../../actions'
+import { inverseMobile } from '../../actions'
 import { useDispatch, useSelector } from 'react-redux'
 
 const Wrapper = styled(animated.div)`
@@ -21,7 +21,7 @@ export default function SizeSwitch() {
     const mobile = useSelector((state) => state.mobile)
 
     const handleEvent = () => {
-        dispatch(inverseMobileAction())
+        dispatch(inverseMobile())
     }
 
     const props = useSpring({})

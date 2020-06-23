@@ -1,5 +1,9 @@
-export const inverseMobileAction = () => ({
+export const inverseMobile = () => ({
     type: 'INVERSE_MOBILE',
+})
+
+export const inversePlaying = () => ({
+    type: 'INVERSE_PLAYING',
 })
 
 export const setWidth = (width) => ({

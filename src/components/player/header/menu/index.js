@@ -1,13 +1,8 @@
 import React from 'react'
-import styled from 'styled-components'
 import { ReactComponent as Icon } from '../../../../svgs/menu.svg'
+import { IconStyle } from '../iconStyles'
 
-const IconWrapper = styled(Icon)`
-    width: ${(props) => props.theme.small};
-    :hover {
-        cursor: pointer;
-    }
-`
+const IconWrapper = IconStyle(Icon)
 
 export default function Menu() {
     const handleEvent = () => {}

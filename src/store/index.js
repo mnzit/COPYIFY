@@ -5,6 +5,7 @@ const initialState = {
     mobile: false,
     mobileWidth: 375,
     mobileHeight: 812,
+    playing: false,
 }
 
 const store = createStore(

@@ -10,6 +10,15 @@ const Wrapper = styled.div`
     align-items: center;
 `
 
+export const IconStyle = (Icon) => {
+    return styled(Icon)`
+        width: ${(props) => props.theme.small};
+        :hover {
+            cursor: pointer;
+        }
+    `
+}
+
 export default function Header() {
     return (
         <Wrapper>
