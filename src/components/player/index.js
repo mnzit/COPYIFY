@@ -1,7 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import Header from './header'
+import Controls from './controls'
 
 const PlayerWrapper = styled.div`
+    background-color: purple;
     position: absolute;
     left: 0;
     right: 0;
@@ -20,7 +23,8 @@ const PlayerWrapper = styled.div`
 export default function Player() {
     return (
         <PlayerWrapper>
-            <h1>Player</h1>
+            <Header />
+            <Controls />
         </PlayerWrapper>
     )
 }

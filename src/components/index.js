@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import Player from './player'
-import Navigator from './navigator'
+/*import Navigator from './navigator'*/
 import SizeSwitch from './sizeSwitch'
 import { animated, useSpring } from 'react-spring'
 import { GlobalStyles } from '../styles/globalStyles'
@@ -46,7 +46,7 @@ function App() {
             {/*window.innerWidth <= mobileSize ? '' : <SizeSwitch />*/}
             <SizeSwitch />
             <AppWrapper style={props}>
-                <Navigator />
+                {/*<Navigator />*/}
                 <Player />
             </AppWrapper>
         </>

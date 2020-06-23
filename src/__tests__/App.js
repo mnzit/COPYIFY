@@ -1,8 +1,20 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import App from '../App'
+import App from '../components'
+import configureMockStore from 'redux-mock-store'
+import thunk from 'redux-thunk'
+import { Provider } from 'react-redux'
 
-/* SMOKE TEST */
+const mockStore = configureMockStore([thunk])
+
 test('renders without crashing', () => {
-    shallow(<App />)
+    const store = mockStore({
+        startup: { complete: false },
+    })
+
+    shallow(
+        <Provider store={store}>
+            <App />
+        </Provider>
+    )
 })
