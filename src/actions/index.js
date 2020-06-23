@@ -2,9 +2,16 @@ export const inverseMobileAction = () => ({
     type: 'INVERSE_MOBILE',
 })
 
-export const setMobileSize = (size) => ({
-    type: 'SET_SIZE',
+export const setWidth = (width) => ({
+    type: 'SET_WIDTH',
     payload: {
-        size: size,
+        width: width,
+    },
+})
+
+export const setHeight = (height) => ({
+    type: 'SET_HEIGHT',
+    payload: {
+        height: height,
     },
 })

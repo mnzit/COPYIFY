@@ -3,31 +3,41 @@ import Player from './player'
 import Navigator from './navigator'
 import SizeSwitch from './sizeSwitch'
 import { animated, useSpring } from 'react-spring'
-import { GlobalStyles } from '../globalStyles'
+import { GlobalStyles } from '../styles/globalStyles'
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { setMobileSize } from '../actions'
+import { setWidth, setHeight } from '../actions'
 
 const AppWrapper = styled(animated.div)`
     width: 100vw;
-    background-color: green;
+    background-color: ${(props) => props.theme.priColor};
     position: relative;
 `
 
 function App() {
-    const mobileSize = useSelector((state) => state.size)
-    const mobile = useSelector((state) => state.mobile)
+    const mobileWidth = useSelector((state) => state.mobileWidth)
+    const mobileHeight = useSelector((state) => state.mobileHeight)
+    const isMobile = useSelector((state) => state.mobile)
     const dispatch = useDispatch()
 
-    console.log(mobile)
-    console.log(mobileSize)
+    const convertToPercent = (numerator, denominator) => {
+        return (numerator / denominator) * 100
+    }
 
-    if (window.innerWidth < mobileSize) {
-        dispatch(setMobileSize(window.innerWidth))
+    if (window.innerWidth < mobileWidth) {
+        dispatch(setWidth(window.innerWidth))
+    }
+    if (window.innerHeight < mobileHeight) {
+        dispatch(setHeight(window.innerHeight))
     }
 
     const props = useSpring({
-        width: mobile ? `${(mobileSize / window.innerWidth) * 100}vw` : `100vw`,
+        width: isMobile
+            ? `${convertToPercent(mobileWidth, window.innerWidth)}vw`
+            : `100vw`,
+        height: isMobile
+            ? `${convertToPercent(mobileHeight, window.innerHeight)}vh`
+            : `100vh`,
     })
 
     return (

@@ -3,7 +3,8 @@ import reducer from '../reducers'
 
 const initialState = {
     mobile: false,
-    size: 411,
+    mobileWidth: 375,
+    mobileHeight: 812,
 }
 
 const store = createStore(

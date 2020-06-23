@@ -5,11 +5,15 @@ export default (state, { type, payload }) => {
                 ...state,
                 mobile: !state.mobile,
             }
-        case 'SET_SIZE':
-            console.log(`size in SET_SIZE ${payload.size}`)
+        case 'SET_WIDTH':
             return {
                 ...state,
-                size: payload.size,
+                mobileWidth: payload.width,
+            }
+        case 'SET_HEIGHT':
+            return {
+                ...state,
+                mobileHeight: payload.height,
             }
         default:
             return state
