@@ -8,6 +8,7 @@ import Shuffle from './shuffle'
 
 const Wrapper = styled.div`
     width: 100%;
+    max-width: 500px;
     display: flex;
     justify-content: space-between;
     align-items: center;
