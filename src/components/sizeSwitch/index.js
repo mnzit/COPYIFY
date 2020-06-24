@@ -6,10 +6,12 @@ import { useDispatch, useSelector } from 'react-redux'
 
 const Wrapper = styled(animated.div)`
     width: 100px;
+    color: white;
     text-align: center;
     background: red;
     position: absolute;
     right: 0;
+    top: 0;
     z-index: 10;
     :hover {
         cursor: pointer;

@@ -6,6 +6,8 @@ const initialState = {
     mobileWidth: 375,
     mobileHeight: 812,
     playing: false,
+    liked: false,
+    clickedLike: false,
 }
 
 const store = createStore(

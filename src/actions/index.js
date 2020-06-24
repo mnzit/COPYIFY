@@ -6,10 +6,21 @@ export const inversePlaying = () => ({
     type: 'INVERSE_PLAYING',
 })
 
+export const inverseLiked = () => ({
+    type: 'INVERSE_LIKED',
+})
+
 export const setWidth = (width) => ({
     type: 'SET_WIDTH',
     payload: {
         width: width,
+    },
+})
+
+export const setClickedLike = (clickedLike) => ({
+    type: 'SET_CLICKED_LIKE',
+    payload: {
+        clickedLike: clickedLike,
     },
 })
 

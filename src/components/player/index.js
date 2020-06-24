@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Header from './header'
 import Controls from './controls'
+import Song from './song'
 
 const PlayerWrapper = styled.div`
     background-color: purple;
@@ -24,6 +25,7 @@ export default function Player() {
     return (
         <PlayerWrapper>
             <Header />
+            <Song />
             <Controls />
         </PlayerWrapper>
     )

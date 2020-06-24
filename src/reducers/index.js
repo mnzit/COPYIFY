@@ -20,6 +20,16 @@ export default (state, { type, payload }) => {
                 ...state,
                 playing: !state.playing,
             }
+        case 'INVERSE_LIKED':
+            return {
+                ...state,
+                liked: !state.liked,
+            }
+        case 'SET_CLICKED_LIKE':
+            return {
+                ...state,
+                clickedLike: payload.clickedLike,
+            }
         default:
             return state
     }
