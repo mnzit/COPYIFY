@@ -25,6 +25,7 @@ export default function Like() {
             dispatch(setClickedLike(false))
         },
         width: clicked ? theme.medium : theme.small,
+        height: clicked ? theme.medium : theme.small,
         config: config.stiff,
     })
 

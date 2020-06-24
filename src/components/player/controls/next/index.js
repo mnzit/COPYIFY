@@ -1,11 +1,8 @@
 import React from 'react'
-import styled from 'styled-components'
+import { directionalStyles } from '../iconStyles'
 import { ReactComponent as Icon } from '../../../../svgs/next.svg'
 
-const IconWrapper = styled(Icon)`
-    width: ${(props) => props.theme.large};
-    fill: ${(props) => props.theme.fill};
-`
+const IconWrapper = directionalStyles(Icon)
 
 export default function Next() {
     return <IconWrapper />
