@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Controls from './controls'
-import Song from './Song'
+import Song from './song'
 
 const Wrapper = styled.div`
     background-color: chocolate;
