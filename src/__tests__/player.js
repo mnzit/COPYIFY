@@ -1,8 +1,20 @@
 import React from 'react'
 import Player from '../components/player/index'
 import { shallow } from 'enzyme'
+import configureMockStore from 'redux-mock-store'
+import thunk from 'redux-thunk'
+import { Provider } from 'react-redux'
 
-/* SMOKE TEST */
+const mockStore = configureMockStore([thunk])
+
 test('renders without crashing', () => {
-    shallow(<Player />)
+    const store = mockStore({
+        startup: { complete: false },
+    })
+
+    shallow(
+        <Provider store={store}>
+            <Player />
+        </Provider>
+    )
 })

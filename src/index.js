@@ -6,7 +6,7 @@ import store from './store'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 import { theme } from './styles/themes'
-console.disableYellowBow = true
+
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
