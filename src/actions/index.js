@@ -17,6 +17,13 @@ export const setWidth = (width) => ({
     },
 })
 
+export const setPlayerColor = (color) => ({
+    type: 'SET_PLAYER_COLOR',
+    payload: {
+        playerColor: color,
+    },
+})
+
 export const setClickedLike = (clickedLike) => ({
     type: 'SET_CLICKED_LIKE',
     payload: {
@@ -28,5 +35,12 @@ export const setHeight = (height) => ({
     type: 'SET_HEIGHT',
     payload: {
         height: height,
+    },
+})
+
+export const setCurrentSong = (song) => ({
+    type: 'SET_CURRENT_SONG',
+    payload: {
+        currentSong: song,
     },
 })

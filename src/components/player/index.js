@@ -4,14 +4,14 @@ import Header from './header'
 import Controls from './controls'
 import Song from './song'
 import { queries } from '../mediaQuery'
+import { useSelector } from 'react-redux'
 
 const PlayerWrapper = styled.div`
-    background-color: purple;
+    background-color: ${(props) => props.playerColor};
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-
     box-sizing: border-box;
     padding: 25px;
     width: 100%;
@@ -24,17 +24,19 @@ const PlayerWrapper = styled.div`
         'CONTROLS CONTROLS CONTROLS';
 
     @media all and (min-width: ${queries.large}px) {
-        max-height: 250px;
+        max-height: 170px;
         max-width: calc(100%);
-        background-color: blue;
+        background-color: ${(props) => props.theme.terColor};
         grid-template-rows: repeat(6, 1fr);
         grid-template-columns: repeat(10, 1fr);
     }
 `
 
 export default function Player() {
+    const playerColor = useSelector((state) => state.playerColor)
+
     return (
-        <PlayerWrapper>
+        <PlayerWrapper playerColor={playerColor}>
             <Header />
             <Song />
             <Controls />

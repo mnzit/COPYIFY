@@ -30,6 +30,16 @@ export default (state, { type, payload }) => {
                 ...state,
                 clickedLike: payload.clickedLike,
             }
+        case 'SET_PLAYER_COLOR':
+            return {
+                ...state,
+                playerColor: payload.playerColor,
+            }
+        case 'SET_CURRENT_SONG':
+            return {
+                ...state,
+                currentSong: payload.currentSong,
+            }
         default:
             return state
     }

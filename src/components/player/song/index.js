@@ -15,6 +15,7 @@ const Wrapper = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 `
 
 const Container = styled.div`
@@ -24,9 +25,9 @@ const Container = styled.div`
         align-items: center;
         width: 100%;
         grid-column: 1/3;
-        grid-row: 5/6;
+        grid-row: 2/3;
     }
-    max-width: 700px;
+    max-width: 600px;
     margin: 0 auto;
     width: 100%;
     grid-area: SONG;
@@ -35,11 +36,15 @@ const Container = styled.div`
 const BasicInfo = styled.div`
     @media all and (min-width: ${queries.large}px) {
         height: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 10px;
     }
 `
 
 export default function Song() {
-    const firstSong = data[2]
+    const firstSong = data[7]
 
     return (
         <Container>

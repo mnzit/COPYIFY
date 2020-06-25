@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 
     @media all and (min-width: ${queries.large}px) {
         grid-column: 4/8;
-        grid-row: 5/6;
+        grid-row: 2/3;
     }
 `
 

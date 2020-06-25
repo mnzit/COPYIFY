@@ -5,7 +5,6 @@ import { IconStyles } from './iconStyles'
 import { useSelector, useDispatch } from 'react-redux'
 import { inverseLiked, setClickedLike } from '../../../../actions'
 import { useSpring, animated, config } from 'react-spring'
-import { theme } from '../../../../styles/themes'
 
 const LikedWrapper = IconStyles(Liked)
 const UnlikedWrapper = IconStyles(Unliked)
@@ -24,8 +23,8 @@ export default function Like() {
         onRest: () => {
             dispatch(setClickedLike(false))
         },
-        width: clicked ? theme.medium : theme.small,
-        height: clicked ? theme.medium : theme.small,
+        width: 30,
+        transform: `scale(${clicked ? 1.2 : 1})`,
         config: config.stiff,
     })
 
@@ -42,9 +41,9 @@ export default function Like() {
     return (
         <animated.div style={props}>
             {liked ? (
-                <LikedWrapper onClick={handleEvent} liked={liked} />
+                <LikedWrapper liked_ shadow_ onClick={handleEvent} />
             ) : (
-                <UnlikedWrapper onClick={handleEvent} liked={liked} />
+                <UnlikedWrapper onClick={handleEvent} />
             )}
         </animated.div>
     )

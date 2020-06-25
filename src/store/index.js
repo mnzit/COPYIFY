@@ -8,6 +8,8 @@ const initialState = {
     playing: false,
     liked: false,
     clickedLike: false,
+    playerColor: '#d4d4d4',
+    currentSong: {},
 }
 
 const store = createStore(
