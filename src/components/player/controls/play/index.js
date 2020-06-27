@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { ReactComponent as PlayIcon } from '../../../../svgs/play.svg'
 import { ReactComponent as PauseIcon } from '../../../../svgs/pause.svg'
 import { useSelector, useDispatch } from 'react-redux'
-import { inversePlaying } from '../../../../actions'
+import { inverse } from '../../../../actions'
 
 const IconStyle = (Icon) => {
     return styled(Icon)`
@@ -20,12 +20,12 @@ const PlayWrapper = IconStyle(PlayIcon)
 const PauseWrapper = IconStyle(PauseIcon)
 
 export default function Play() {
+    const playing = useSelector((state) => state.playing)
     const dispatch = useDispatch()
     const handleClick = () => {
-        dispatch(inversePlaying())
+        dispatch(inverse({ playing }))
     }
 
-    const playing = useSelector((state) => state.playing)
     return (
         <span onClick={handleClick}>
             {playing ? <PauseWrapper /> : <PlayWrapper />}

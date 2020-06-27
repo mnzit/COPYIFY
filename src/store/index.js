@@ -1,5 +1,6 @@
 import { createStore } from 'redux'
 import reducer from '../reducers'
+import data from '../data'
 
 const initialState = {
     mobile: false,
@@ -9,7 +10,7 @@ const initialState = {
     liked: false,
     clickedLike: false,
     playerColor: '#d4d4d4',
-    currentSong: {},
+    savedSongs: [...data],
 }
 
 const store = createStore(

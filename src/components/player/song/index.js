@@ -6,6 +6,9 @@ import Artistes from './artistes'
 import Like from './like'
 import data from '../../../data'
 import { queries } from '../../mediaQuery'
+import { useDispatch } from 'react-redux'
+import { set } from '../../../actions'
+import COLORTHIEF from 'color-thief'
 
 const Wrapper = styled.div`
     @media all and (min-width: ${queries.large}px) {
@@ -45,10 +48,28 @@ const BasicInfo = styled.div`
 
 export default function Song() {
     const firstSong = data[7]
+    const dispatch = useDispatch()
+
+    function getColorFromImage(imageRef) {
+        return () => {
+            const thief = new COLORTHIEF()
+
+            const colorValues = thief.getColor(imageRef.current)
+
+            const colorHex = `#${colorValues
+                .map((x) => {
+                    let hex = x.toString(16)
+                    return hex.length === 1 ? '0' + hex : hex
+                })
+                .join('')}`
+
+            dispatch(set({ playerColor: colorHex }))
+        }
+    }
 
     return (
         <Container>
-            <Art art={firstSong.cover} />
+            <Art art={firstSong.cover} getColor={getColorFromImage} />
             <Wrapper>
                 <BasicInfo>
                     <Name name={firstSong.title} />

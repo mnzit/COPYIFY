@@ -12,21 +12,22 @@ const Wrapper = styled.div`
 `
 
 const NameWrapper = styled.div`
-    font-size: 20px;
+    font-size: ${(props) => props.size}px;
     width: calc(100%);
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 `
 
-export default function Name({ name }) {
+export default function Name({ name, size }) {
     return (
         <Wrapper>
-            <NameWrapper>{name}</NameWrapper>
+            <NameWrapper size={size ? size : 20}>{name}</NameWrapper>
         </Wrapper>
     )
 }
 
 Name.propTypes = {
     name: PropTypes.string,
+    size: PropTypes.number,
 }
