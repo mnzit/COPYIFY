@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import Player from './player'
-import Mini from './mini'
+/*import Mini from './mini'*/
 /*import Navigator from './navigator'*/
 /*import SizeSwitch from './sizeSwitch'*/
 import { animated, useSpring } from 'react-spring'
@@ -49,7 +49,7 @@ function App() {
             <AppWrapper style={props}>
                 {/*<Navigator />*/}
                 <Player />
-                <Mini />
+                {/*<Mini />*/}
             </AppWrapper>
         </>
     )

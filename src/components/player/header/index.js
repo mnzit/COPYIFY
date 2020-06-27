@@ -10,7 +10,7 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 700px;
+    max-width: ${({ theme }) => theme.maxWidth};
     margin: 0 auto;
     @media all and (min-width: ${queries.large}px) {
         display: none;

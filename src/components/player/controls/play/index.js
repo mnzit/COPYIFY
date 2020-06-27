@@ -7,9 +7,10 @@ import { inverse } from '../../../../actions'
 
 const IconStyle = (Icon) => {
     return styled(Icon)`
-        width: ${(props) => props.theme.largest};
+        width: ${50}px;
         fill: ${(props) => props.theme.fill};
-        height: ${(props) => props.theme.largest};
+        height: ${50}px;
+
         :hover {
             cursor: pointer;
         }
@@ -26,9 +27,9 @@ export default function Play() {
         dispatch(inverse({ playing }))
     }
 
-    return (
-        <span onClick={handleClick}>
-            {playing ? <PauseWrapper /> : <PlayWrapper />}
-        </span>
+    return playing ? (
+        <PauseWrapper onClick={handleClick} />
+    ) : (
+        <PlayWrapper onClick={handleClick} />
     )
 }

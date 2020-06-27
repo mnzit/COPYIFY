@@ -30,7 +30,7 @@ const Container = styled.div`
         grid-column: 1/3;
         grid-row: 2/3;
     }
-    max-width: 600px;
+    max-width: ${({ theme }) => theme.maxWidth};
     margin: 0 auto;
     width: 100%;
     grid-area: SONG;
@@ -72,7 +72,7 @@ export default function Song() {
             <Art art={firstSong.cover} getColor={getColorFromImage} />
             <Wrapper>
                 <BasicInfo>
-                    <Name name={firstSong.title} />
+                    <Name name={firstSong.title} size={20} />
                     <Artistes artistes={firstSong.artistes} />
                 </BasicInfo>
                 <Like />

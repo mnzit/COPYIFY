@@ -10,6 +10,8 @@ const InnerWrapper = styled.div`
     align-items: center;
 `
 const Wrapper = styled.div`
+    position: absolute;
+    top: 200px;
     background-color: ${({ theme }) => theme.terColor};
     width: 100%;
 `
