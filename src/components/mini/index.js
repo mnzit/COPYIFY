@@ -15,13 +15,11 @@ const InnerWrapper = styled.div`
 `
 const Wrapper = styled(animated.div)`
     position: absolute;
-    transform: translateY(0%);
     background-color: ${({ theme }) => theme.terColor};
-    width: 100%;
-    display: none;
+    max-width: calc(100%);
+    overflow: hidden;
     top: 100%;
     @media all and (max-width: ${queries.large}px) {
-        display: block;
         background-color: ${({ theme }) => theme.terColor};
     }
 `

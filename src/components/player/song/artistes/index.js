@@ -9,7 +9,7 @@ const Wrapper = styled.div`
     opacity: 0.6;
     user-select: none;
     @media all and (min-width: ${queries.large}px) {
-        max-width: 200px;
+        max-width: 90%;
     }
 `
 

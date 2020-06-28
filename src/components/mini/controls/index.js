@@ -5,14 +5,19 @@ import { ReactComponent as Pause } from '../../../svgs/mini_pause.svg'
 import { useSelector, useDispatch } from 'react-redux'
 import { inverse } from '../../../actions'
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 62px;
+`
 
 const createIconWrapper = (Icon) => {
     return styled(Icon)`
-        max-width: 15px;
-        width: 15px;
+        width: 20%;
         fill: white;
-        margin-right: 20px;
+        margin: 0 20px;
     `
 }
 

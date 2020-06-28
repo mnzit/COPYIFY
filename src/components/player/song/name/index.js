@@ -7,7 +7,7 @@ const Wrapper = styled.div`
     user-select: none;
     color: ${(props) => props.theme.secColor};
     @media all and (min-width: ${queries.large}px) {
-        max-width: 200px;
+        max-width: 100%;
     }
 `
 

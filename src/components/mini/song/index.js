@@ -1,32 +1,28 @@
 import React from 'react'
 import styled from 'styled-components'
-import Artistes from '../../player/song/artistes'
 import Art from '../../player/song/art'
-import Name from '../../player/song/name'
+import Artistes from './artistes'
+import Name from './name'
 
 import data from '../../../data'
 
 const Info = styled.div`
     display: flex;
+    align-items: center;
+    max-width: 70%;
 `
 const ArtWrapper = styled.div`
     margin-right: 20px;
-    max-width: 100px;
+    max-width: calc(15%);
 `
 
-const SongMeta = styled.div`
+const Meta = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
-`
-
-const Separator = styled.span`
-    margin: auto 5px;
-    color: white;
-`
-
-const Basic = styled.div`
-    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 `
 
 export default function Song() {
@@ -37,14 +33,11 @@ export default function Song() {
             <ArtWrapper>
                 <Art art={song.cover} />
             </ArtWrapper>
+            <Meta>
+                <Name name={song.title} />
 
-            <SongMeta>
-                <Basic>
-                    <Name name={song.title} size={16} />
-                    <Separator>•</Separator>
-                    <Artistes artistes={song.artistes} size={16} />
-                </Basic>
-            </SongMeta>
+                <Artistes artistes={[...song.artistes, 'SOME OTHER DUDE']} />
+            </Meta>
         </Info>
     )
 }
