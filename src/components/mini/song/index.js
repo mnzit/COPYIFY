@@ -11,6 +11,7 @@ const Info = styled.div`
 `
 const ArtWrapper = styled.div`
     margin-right: 20px;
+    max-width: 100px;
 `
 
 const SongMeta = styled.div`

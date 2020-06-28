@@ -5,8 +5,10 @@ import { queries } from '../../../mediaQuery'
 
 const Wrapper = styled.div`
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: ${(props) => (props.marginBottom ? `20px` : '0px')};
     display: flex;
+    max-width: 100%;
+    min-width: 50px;
 
     @media all and (min-width: ${queries.large}px) {
         max-width: 80px;
@@ -20,7 +22,7 @@ const Image = styled.img`
     user-select: none;
 `
 
-export default function Art({ art, getColor }) {
+export default function Art({ art, getColor, marginBottom }) {
     const imageRef = useRef(null)
     const googleProxy = `https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&refresh=2592000&url=`
     const src = googleProxy + art
@@ -28,7 +30,7 @@ export default function Art({ art, getColor }) {
     const onLoad = getColor ? getColor(imageRef) : () => {}
 
     return (
-        <Wrapper>
+        <Wrapper marginBottom={marginBottom}>
             <Image
                 src={src}
                 alt={`music art cover`}
@@ -44,4 +46,5 @@ export default function Art({ art, getColor }) {
 Art.propTypes = {
     art: PropTypes.string,
     getColor: PropTypes.func,
+    marginBottom: PropTypes.bool,
 }

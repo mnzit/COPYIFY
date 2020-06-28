@@ -6,9 +6,10 @@ import Song from './song'
 import Seeker from './seeker'
 import { queries } from '../mediaQuery'
 import { useSelector } from 'react-redux'
+import { useSpring, animated } from 'react-spring'
 
-const PlayerWrapper = styled.div`
-    background-color: ${(props) => props.playerColor};
+const PlayerWrapper = styled(animated.div)`
+    background-color: ${(props) => props.playercolor};
     position: absolute;
     left: 0;
     right: 0;
@@ -37,9 +38,15 @@ const PlayerWrapper = styled.div`
 
 export default function Player() {
     const playerColor = useSelector((state) => state.playerColor)
+    const playerDown = useSelector((state) => state.playerDown)
+
+    const props = useSpring({
+        transform: `translateY(${playerDown ? '90%' : '0%'})`,
+        opacity: playerDown ? 0 : 1,
+    })
 
     return (
-        <PlayerWrapper playerColor={playerColor}>
+        <PlayerWrapper playercolor={playerColor} style={props}>
             <Header />
             <Song />
             <Seeker />

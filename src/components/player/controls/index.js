@@ -15,7 +15,7 @@ const Wrapper = styled.div`
     align-items: center;
     grid-area: CONTROLS;
     margin: 0 auto;
-
+    margin-top: 10px;
     @media all and (min-width: ${queries.large}px) {
         grid-column: 4/8;
         grid-row: 2/3;

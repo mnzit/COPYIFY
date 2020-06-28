@@ -6,6 +6,7 @@ const initialState = {
     mobile: false,
     mobileWidth: 375,
     mobileHeight: 812,
+    playerDown: false,
     playing: false,
     liked: false,
     clickedLike: false,

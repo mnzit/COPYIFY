@@ -69,7 +69,11 @@ export default function Song() {
 
     return (
         <Container>
-            <Art art={firstSong.cover} getColor={getColorFromImage} />
+            <Art
+                art={firstSong.cover}
+                getColor={getColorFromImage}
+                marginBottom
+            />
             <Wrapper>
                 <BasicInfo>
                     <Name name={firstSong.title} size={20} />

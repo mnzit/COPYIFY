@@ -23,10 +23,11 @@ export default function Controls() {
     const playing = useSelector((state) => state.playing)
     const dispatch = useDispatch()
 
-    const handleEvent = ({ type }) => {
-        switch (type) {
+    const handleEvent = (e) => {
+        switch (e.type) {
             case 'click':
                 dispatch(inverse({ playing }))
+                e.stopPropagation()
                 break
             default:
                 break
