@@ -1,7 +1,6 @@
 import styled from 'styled-components'
-/*import Player from './player'
-import Mini from './mini'*/
-import Navigator from './navigator'
+import Player from './player'
+import Mini from './mini'
 
 import { GlobalStyles } from '../styles/globalStyles'
 import React from 'react'
@@ -19,7 +18,9 @@ function App() {
             <GlobalStyles />
 
             <AppWrapper>
-                <Navigator />
+                {/*<Navigator />*/}
+                <Player />
+                <Mini />
             </AppWrapper>
         </>
     )
