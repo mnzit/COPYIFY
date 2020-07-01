@@ -6,7 +6,7 @@ import data from '../../../../data'
 
 const Wrapper = styled.div`
     height: 100vh;
-    padding: 20px;
+    padding: 20px 0px;
     overflow-y: auto;
     background-color: black;
 `

@@ -12,8 +12,7 @@ import Title from './title'
 import PropTypes from 'prop-types'
 
 const Wrapper = styled.div`
-    display: flex;
-    justify-content: space-between;
+    display: grid;
     margin: 20px 0;
     width: 100%;
     transition: 0.25s ease-in;
@@ -22,19 +21,26 @@ const Wrapper = styled.div`
         cursor: pointer;
     }
     color: white;
-    padding: 10px 15px;
+    padding: 10px 20px;
+    grid-template-columns: repeat(10, 10%);
+    grid-template-rows: 1fr;
 `
 
 const Properties = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: calc(60%);
+    width: calc(100%);
     text-overflow: ellipsis;
     white-space: nowrap;
     div {
         margin-right: 10px;
     }
+`
+const ArtInfo = styled.div`
+    width: 100%;
+    display: flex;
+    grid-column: 1/6;
 `
 
 const Lower = styled.div`
@@ -45,18 +51,19 @@ const Lower = styled.div`
 export default function Item({ item }) {
     return (
         <Wrapper>
-            <Art art={item.cover} />
-            <Properties>
-                <Title title={item.title} />
-                <Lower>
-                    <Explicit explicit={item.explicit} />
-                    <ArtistesAlbum
-                        artistes={item.artistes}
-                        album={item.album}
-                    />
-                </Lower>
-            </Properties>
-
+            <ArtInfo>
+                <Art art={item.cover} />
+                <Properties>
+                    <Title title={item.title} />
+                    <Lower>
+                        <Explicit explicit={item.explicit} />
+                        <ArtistesAlbum
+                            artistes={item.artistes}
+                            album={item.album}
+                        />
+                    </Lower>
+                </Properties>
+            </ArtInfo>
             <Like like={item.liked} />
             <Menu />
         </Wrapper>

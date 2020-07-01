@@ -5,7 +5,9 @@ import { ReactComponent as Icon } from '../../../../svgs/menu.svg'
 const Wrapper = styled.div`
     width: 15px;
     display: flex;
-    align-items: center;
+    justify-self: end;
+    align-self: center;
+    grid-column: 10/11;
 `
 
 const IconWrapper = styled(Icon)`

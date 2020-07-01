@@ -5,19 +5,21 @@ import { ReactComponent as Icon } from '../../../../../svgs/search.svg'
 
 const Form = styled.form`
     width: 100%;
-    padding: 0 15px;
-    display: flex;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
     font-weight: bold;
 `
 
 const IconWrapper = styled(Icon)`
-    width: 50%;
+    width: 100%;
+    max-width: 25px;
+    padding: 5px;
     fill: white;
 `
 const IconContainer = styled.div`
-    width: 15%;
-    max-width: 35px;
-    height: 100%;
+    width: 10%;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,8 +30,8 @@ const IconContainer = styled.div`
 `
 
 const SearchBar = styled.input`
-    width: 100%;
-    margin-right: 15px;
+    width: 90%;
+
     padding: 5px;
     border-radius: 5px;
     border-top-left-radius: 0;
@@ -44,10 +46,12 @@ const SearchBar = styled.input`
 `
 
 const SearchWrapper = styled.div`
-    width: 80%;
+    width: 100%;
     display: inline-flex;
     flex: 1 1 300px;
     position: relative;
+    grid-column: 1/8;
+    justify-content: stretch;
 `
 
 export default function Search() {

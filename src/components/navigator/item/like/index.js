@@ -13,10 +13,12 @@ const Unliked = styled(IconStyles(UnlikedIcon))`
 `
 
 const Wrapper = styled.div`
-    width: calc(10%);
-    max-width: 20px;
+    width: calc(100%);
+    max-width: 15px;
+
     display: flex;
     align-items: center;
+    grid-column: 9/10;
 `
 
 export default function Like({ like }) {
