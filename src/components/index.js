@@ -1,14 +1,14 @@
 import styled from 'styled-components'
-import Player from './player'
-import Mini from './mini'
-
+//import Player from './player'
+//import Mini from './mini'
+import Navigator from './navigator/'
 import { GlobalStyles } from '../styles/globalStyles'
 import React from 'react'
 
 const AppWrapper = styled.div`
     width: 100vw;
     height: 100vh;
-    background-color: ${(props) => props.theme.priColor};
+    background-color: green;
     position: relative;
 `
 
@@ -18,9 +18,9 @@ function App() {
             <GlobalStyles />
 
             <AppWrapper>
-                {/*<Navigator />*/}
-                <Player />
-                <Mini />
+                <Navigator />
+                {/*<Player />*/}
+                {/*<Mini />*/}
             </AppWrapper>
         </>
     )
