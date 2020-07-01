@@ -8,11 +8,14 @@ const Wrapper = styled.div`
     text-overflow: ellipsis;
 `
 
-export default function ArtistesAlbum({ artistes, album }) {
-    return <Wrapper>{`${artistes.join(', ')} ${album}`}</Wrapper>
+export default function ArtistesAlbum({ artistes, album, title }) {
+    return (
+        <Wrapper>{`${artistes.join(', ')} • ${album ? album : title}`}</Wrapper>
+    )
 }
 
 ArtistesAlbum.propTypes = {
     artistes: PropTypes.array,
     album: PropTypes.string,
+    title: PropTypes.string,
 }

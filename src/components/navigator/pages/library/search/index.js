@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import styled from 'styled-components'
-import Filters from './filters'
+import SearchButton from './searchButton'
 import { ReactComponent as Icon } from '../../../../../svgs/search.svg'
+import { useDispatch } from 'react-redux'
+import { set } from '../../../../../actions'
 
 const Form = styled.form`
     width: 100%;
@@ -13,12 +15,12 @@ const Form = styled.form`
 
 const IconWrapper = styled(Icon)`
     width: 100%;
-    max-width: 25px;
-    padding: 5px;
+    max-width: 30px;
+    padding: 8px;
     fill: white;
 `
 const IconContainer = styled.div`
-    width: 10%;
+    width: 20%;
 
     display: flex;
     align-items: center;
@@ -55,6 +57,29 @@ const SearchWrapper = styled.div`
 `
 
 export default function Search() {
+    const dispatch = useDispatch()
+    const searchRef = useRef()
+    const handleEvent = ({ type }) => {
+        switch (type) {
+            case 'focus':
+                dispatch(set({ searchFocus: true }))
+                break
+
+            default:
+                break
+        }
+    }
+
+    const resetSearch = () => {
+        searchRef.current.value = ''
+        dispatch(set({ libSearchValue: '' }))
+    }
+
+    const setLibSearchValue = (e) => {
+        const valueFromField = e.target.value
+        dispatch(set({ libSearchValue: valueFromField }))
+    }
+
     return (
         <Form>
             <SearchWrapper>
@@ -62,10 +87,16 @@ export default function Search() {
                     <IconWrapper />
                 </IconContainer>
 
-                <SearchBar type='text' placeholder='Find in library' />
+                <SearchBar
+                    type='text'
+                    placeholder='Find in library'
+                    onFocus={handleEvent}
+                    onChange={setLibSearchValue}
+                    ref={searchRef}
+                />
             </SearchWrapper>
 
-            <Filters />
+            <SearchButton reset={resetSearch} />
         </Form>
     )
 }

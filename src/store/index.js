@@ -11,6 +11,8 @@ const initialState = {
     liked: false,
     clickedLike: false,
     playerColor: '#d4d4d4',
+    searchFocus: false,
+    libSearchValue: '',
     savedSongs: [...data],
 }
 

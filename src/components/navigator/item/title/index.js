@@ -5,7 +5,11 @@ import PropTypes from 'prop-types'
 const Wrapper = styled.div``
 
 export default function Title({ title }) {
-    return <Wrapper>{title}</Wrapper>
+    return (
+        <Wrapper>
+            <strong>{title}</strong>
+        </Wrapper>
+    )
 }
 
 Title.propTypes = {
