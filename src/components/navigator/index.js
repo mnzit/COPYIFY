@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import NavBar from './navBar'
+//import NavBar from './navBar'
 import RouteHandler from './routeHandler'
 import { BrowserRouter as Router } from 'react-router-dom'
 
@@ -10,7 +10,7 @@ export default function Navigator() {
     return (
         <Router>
             <NavigatorWrapper>
-                <NavBar />
+                {/*<NavBar />*/}
                 <RouteHandler />
             </NavigatorWrapper>
         </Router>

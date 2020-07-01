@@ -23,4 +23,8 @@ svg:hover{
     cursor: pointer;
 }
 
+button:hover{
+    cursor: pointer;
+}
+
 `
