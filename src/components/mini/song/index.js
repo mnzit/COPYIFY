@@ -1,19 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-import Art from '../../player/song/art'
+import Art from './art'
 import Artistes from './artistes'
 import Name from './name'
-
-import data from '../../../data'
+import PropTypes from 'prop-types'
 
 const Info = styled.div`
     display: flex;
     align-items: center;
     max-width: 70%;
-`
-const ArtWrapper = styled.div`
-    margin-right: 20px;
-    max-width: calc(15%);
 `
 
 const Meta = styled.div`
@@ -25,19 +20,20 @@ const Meta = styled.div`
     text-overflow: ellipsis;
 `
 
-export default function Song() {
-    const song = data[7]
-
+export default function Song({ song }) {
     return (
         <Info>
-            <ArtWrapper>
-                <Art art={song.cover} />
-            </ArtWrapper>
+            <Art art={song.cover} />
+
             <Meta>
                 <Name name={song.title} />
 
-                <Artistes artistes={[...song.artistes, 'SOME OTHER DUDE']} />
+                <Artistes artistes={song.artistes} />
             </Meta>
         </Info>
     )
+}
+
+Song.propTypes = {
+    song: PropTypes.object,
 }

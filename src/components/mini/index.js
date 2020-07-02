@@ -16,7 +16,7 @@ const InnerWrapper = styled.div`
 const Wrapper = styled(animated.div)`
     position: absolute;
     background-color: ${({ theme }) => theme.terColor};
-    max-width: calc(100%);
+    width: calc(100%);
     overflow: hidden;
     top: 100%;
     @media all and (max-width: ${queries.large}px) {
@@ -25,7 +25,9 @@ const Wrapper = styled(animated.div)`
 `
 export default function Mini() {
     const playerDown = useSelector((state) => state.playerDown)
+    const currentlyPlaying = useSelector((state) => state.currentlyPlaying)
     const dispatch = useDispatch()
+    const isSomethingPlaying = Object.keys(currentlyPlaying).length
 
     const handleClick = () => {
         dispatch(inverse({ playerDown }))
@@ -33,15 +35,18 @@ export default function Mini() {
 
     const props = useSpring({
         transform: `translateY(${playerDown ? '-100%' : '0%'})`,
+        opacity: isSomethingPlaying ? 1 : 0,
     })
 
-    return (
+    return isSomethingPlaying ? (
         <Wrapper style={props} onClick={handleClick}>
             <Seeker />
             <InnerWrapper>
-                <Song />
+                <Song song={currentlyPlaying} />
                 <Controls />
             </InnerWrapper>
         </Wrapper>
+    ) : (
+        ''
     )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-    height: 5px;
+    height: 2px;
     opacity: 0.5;
     background-color: white;
 `

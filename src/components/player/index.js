@@ -39,18 +39,21 @@ const PlayerWrapper = styled(animated.div)`
 export default function Player() {
     const playerColor = useSelector((state) => state.playerColor)
     const playerDown = useSelector((state) => state.playerDown)
+    const currentlyPlaying = useSelector((state) => state.currentlyPlaying)
 
     const props = useSpring({
         transform: `translateY(${playerDown ? '90%' : '0%'})`,
         opacity: playerDown ? 0 : 1,
     })
 
-    return (
+    return Object.keys(currentlyPlaying).length ? (
         <PlayerWrapper playercolor={playerColor} style={props}>
             <Header />
-            <Song />
+            <Song song={currentlyPlaying} />
             <Seeker />
             <Controls />
         </PlayerWrapper>
+    ) : (
+        ''
     )
 }

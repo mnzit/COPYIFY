@@ -6,13 +6,14 @@ const initialState = {
     mobile: false,
     mobileWidth: 375,
     mobileHeight: 812,
-    playerDown: false,
+    playerDown: true,
     playing: false,
     liked: false,
     clickedLike: false,
     playerColor: '#d4d4d4',
     searchFocus: false,
     libSearchValue: '',
+    currentlyPlaying: {},
     savedSongs: [...data],
 }
 

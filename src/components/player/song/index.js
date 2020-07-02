@@ -4,11 +4,11 @@ import Art from './art'
 import Name from './name'
 import Artistes from './artistes'
 import Like from './like'
-import data from '../../../data'
 import { queries } from '../../mediaQuery'
 import { useDispatch } from 'react-redux'
 import { set } from '../../../actions'
 import COLORTHIEF from 'color-thief'
+import PropTypes from 'prop-types'
 
 const Wrapper = styled.div`
     @media all and (min-width: ${queries.large}px) {
@@ -46,8 +46,7 @@ const BasicInfo = styled.div`
     }
 `
 
-export default function Song() {
-    const firstSong = data[7]
+export default function Song({ song }) {
     const dispatch = useDispatch()
 
     function getColorFromImage(imageRef) {
@@ -69,18 +68,18 @@ export default function Song() {
 
     return (
         <Container>
-            <Art
-                art={firstSong.cover}
-                getColor={getColorFromImage}
-                marginBottom
-            />
+            <Art art={song.cover} getColor={getColorFromImage} marginBottom />
             <Wrapper>
                 <BasicInfo>
-                    <Name name={firstSong.title} size={20} />
-                    <Artistes artistes={firstSong.artistes} />
+                    <Name name={song.title} size={20} />
+                    <Artistes artistes={song.artistes} />
                 </BasicInfo>
                 <Like />
             </Wrapper>
         </Container>
     )
+}
+
+Song.propTypes = {
+    song: PropTypes.object,
 }
