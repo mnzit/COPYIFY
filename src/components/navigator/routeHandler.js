@@ -1,6 +1,6 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import Home from './pages/home'
+//import Home from './pages/home'
 import Artiste from './pages/artiste'
 import Album from './pages/album'
 import Playlist from './pages/playlist'
@@ -11,7 +11,7 @@ export default function RouteHandler() {
     return (
         <Switch>
             <Route exact path='/'>
-                <Home />
+                <Library />
             </Route>
 
             <Route path='/artiste/:id'>
