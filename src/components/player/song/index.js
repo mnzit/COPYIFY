@@ -27,7 +27,7 @@ const Container = styled.div`
         justify-content: space-evenly;
         align-items: center;
         width: 100%;
-        grid-column: 1/3;
+
         grid-row: 2/3;
     }
     max-width: ${({ theme }) => theme.maxWidth};

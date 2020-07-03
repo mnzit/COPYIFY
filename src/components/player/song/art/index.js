@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 
     @media all and (min-width: ${queries.large}px) {
         max-width: 80px;
-        min-width: 60px;
+        min-width: 80px;
         max-height: 80px;
         margin-bottom: 0px;
     }
