@@ -26,12 +26,11 @@ const Container = styled.div`
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        width: 100%;
-
+        width: 90%;
         grid-row: 2/3;
     }
     max-width: ${({ theme }) => theme.maxWidth};
-    margin: 0 auto;
+
     width: 100%;
     grid-area: SONG;
 `
@@ -43,6 +42,8 @@ const BasicInfo = styled.div`
         flex-direction: column;
         justify-content: center;
         margin-left: 10px;
+        max-width: 80%;
+        width: 80%;
     }
 `
 
