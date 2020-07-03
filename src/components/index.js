@@ -18,9 +18,9 @@ function App() {
             <GlobalStyles />
 
             <AppWrapper>
-                <Navigator />
+                {/*<Navigator />*/}
                 <Player />
-                <Mini />
+                {/*<Mini />*/}
             </AppWrapper>
         </>
     )

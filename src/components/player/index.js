@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Header from './header'
 import Controls from './controls'
+import data from '../../data'
 import Song from './song'
 import Seeker from './seeker'
 import { queries } from '../mediaQuery'
@@ -20,13 +21,9 @@ const PlayerWrapper = styled(animated.div)`
     width: 100%;
     height: 100%;
     display: grid;
-    grid-gap: 3px;
-    grid-template-areas:
-        'HEADER HEADER HEADER'
-        '... ... ...'
-        'SONG SONG SONG'
-        'SEEKER SEEKER SEEKER'
-        'CONTROLS CONTROLS CONTROLS';
+
+    grid-template-columns: repeat(10, 10%);
+    grid-template-rows: repeat(10, 10%);
 
     @media all and (min-width: ${queries.large}px) {
         max-height: 140px;
@@ -40,11 +37,11 @@ const PlayerWrapper = styled(animated.div)`
 export default function Player() {
     const playerColor = useSelector((state) => state.playerColor)
     const playerDown = useSelector((state) => state.playerDown)
-    const currentlyPlaying = useSelector((state) => state.currentlyPlaying)
-
+    //const currentlyPlaying = useSelector((state) => state.currentlyPlaying)
+    const currentlyPlaying = data[1]
     const props = useSpring({
-        transform: `translateY(${playerDown ? '90%' : '0%'})`,
-        opacity: playerDown ? 0 : 1,
+        /*transform: `translateY(${playerDown ? '90%' : '0%'})`,
+        opacity: playerDown ? 0 : 1,*/
     })
 
     return Object.keys(currentlyPlaying).length ? (

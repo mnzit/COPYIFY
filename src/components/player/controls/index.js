@@ -13,7 +13,8 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    grid-area: CONTROLS;
+    grid-column: 1/11;
+    grid-row: 9/10;
     margin: 0 auto;
     margin-top: 10px;
     @media all and (min-width: ${queries.large}px) {

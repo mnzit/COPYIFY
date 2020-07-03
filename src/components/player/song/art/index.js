@@ -7,8 +7,9 @@ const Image = styled.img`
     width: 100%;
     max-width: 100%;
     margin-bottom: ${(props) => (props.marginBottom ? `20px` : '0px')};
+    max-height: 100%;
     user-select: none;
-
+    object-fit: contain;
     @media all and (min-width: ${queries.large}px) {
         max-width: 80px;
         min-width: 80px;

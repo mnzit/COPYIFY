@@ -6,7 +6,8 @@ import { queries } from '../../mediaQuery'
 
 const Wrapper = styled.div`
     width: 100%;
-    grid-area: HEADER;
+    grid-row: 1/2;
+    grid-column: 1/11;
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -46,18 +46,10 @@ export default function Library() {
 
     const filtered = data.filter(filterItems)
 
-    const itemsWithTransitions = useTransition(filtered, (item, key) => key, {
-        unique: true,
-        enter: { opacity: 1, width: '100%' },
-        leave: { opacity: 0, width: '0%' },
-        trail: 100 / filtered.length,
-        config: config.gentle,
-    })
-
     return (
         <Wrapper>
             <Search />
-            {itemsWithTransitions.map(createItems)}
+            {filtered.map(createItems)}
         </Wrapper>
     )
 }

@@ -30,9 +30,10 @@ const Container = styled.div`
         grid-row: 2/3;
     }
     max-width: ${({ theme }) => theme.maxWidth};
-
+    margin: 0 auto;
     width: 100%;
-    grid-area: SONG;
+    grid-column: 1/11;
+    grid-row: 2/8;
 `
 
 const BasicInfo = styled.div`

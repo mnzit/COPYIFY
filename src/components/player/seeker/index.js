@@ -5,9 +5,11 @@ import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
 
 const Wrapper = styled.div`
-    width: 100%;
+    width: calc(100%);
     height: 4px;
-    grid-area: SEEKER;
+
+    grid-column: 1/11;
+    grid-row: 8/9;
     max-width: ${({ theme }) => theme.maxWidth};
     margin: 0 auto;
     @media all and (min-width: ${queries.large}px) {
