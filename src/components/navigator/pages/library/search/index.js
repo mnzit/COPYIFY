@@ -38,6 +38,7 @@ const SearchBar = styled.input`
     border-radius: 5px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    font-size: 16px;
     border: none;
     outline: none;
     background-color: hsla(360, 100%, 100%, 0.35);
