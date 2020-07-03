@@ -24,6 +24,8 @@ export default function Like() {
             dispatch(set({ clickedLike: false }))
         },
         width: 30,
+        display: 'flex',
+        justifyContent: 'center',
         transform: `scale(${clickedLike ? 1.2 : 1})`,
         config: config.stiff,
     })

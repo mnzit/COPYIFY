@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux'
 import { useSpring, animated } from 'react-spring'
 
 const PlayerWrapper = styled(animated.div)`
+    justify-content: center;
     background-color: ${(props) => props.playercolor};
     position: absolute;
     left: 0;

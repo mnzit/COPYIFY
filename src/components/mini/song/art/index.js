@@ -4,6 +4,9 @@ import PropTypes from 'prop-types'
 
 const Image = styled.img`
     width: 60px;
+    height: 60px;
+    max-width: 60px;
+    max-height: 60px;
     margin-right: 15px;
 `
 

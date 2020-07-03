@@ -3,8 +3,7 @@ const data = [
         title: 'Tuscan Leather',
         album: 'Nothing Was The Same',
         artistes: ['Drake'],
-        cover:
-            'https://hiphop-n-more.com/wp-content/uploads/2013/08/NWTS-Standard.jpg',
+        cover: '/images/ntws.jpg',
         liked: false,
         explicit: true,
     },
@@ -12,8 +11,7 @@ const data = [
         title: 'Bad Idea',
         album: 'The Lost Boy',
         artistes: ['YBN Cordae', 'Chance The Rapper'],
-        cover:
-            'https://djbooth.net/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTY1NzI5MzQ2MDQ3Mzg2NzE3/ybn-cordae-the-lost-boy-album-review.jpg',
+        cover: '/images/badidea.jpg',
         liked: true,
         explicit: true,
     },
@@ -21,8 +19,7 @@ const data = [
         title: 'LOVE AGAIN',
         album: 'CASE STUDY 01',
         artistes: ['Daniel Caesar', 'Brandy'],
-        cover:
-            'https://media.pitchfork.com/photos/5d15374982ada80008ddf2ca/1:1/w_600/CaseStudy_DanielCaesar.jpg',
+        cover: '/images/casestudy.jpg',
         liked: true,
         explicit: false,
     },
@@ -30,7 +27,7 @@ const data = [
         title: 'Say Na',
         album: 'RESET',
         artistes: ['Moneybagg', 'J. Cole'],
-        cover: 'https://m.media-amazon.com/images/I/816IhT4wFYL._SS500_.jpg',
+        cover: '/images/sayna.jpg',
         liked: false,
         explicit: true,
     },
@@ -38,8 +35,7 @@ const data = [
         title: 'P*$$Y Fairy (OTW)',
         album: '',
         artistes: ['Jhene Aiko'],
-        cover:
-            'https://thatgrapejuice.net/wp-content/uploads/2020/02/jhene-aiko-chilombo-thatgrapejuice-600x600.jpg',
+        cover: '/images/chillombo.jpg',
         liked: false,
         explicit: true,
     },
@@ -47,8 +43,7 @@ const data = [
         title: 'I Spy',
         album: '',
         artistes: ['Lila Ike'],
-        cover:
-            'https://respect-mag.com/wp-content/uploads/2020/04/image004-2.png',
+        cover: '/images/ispy.png',
         liked: true,
         explicit: false,
     },
@@ -56,8 +51,7 @@ const data = [
         title: 'Besame mucho',
         album: "40 titres d'or",
         artistes: ['Tino Rossi'],
-        cover:
-            'https://images-na.ssl-images-amazon.com/images/I/81AAvJRHtOL._SX355_.jpg',
+        cover: '/images/besamemucho.jpg',
         liked: false,
         explicit: true,
     },
@@ -65,8 +59,7 @@ const data = [
         title: 'Not Coming Back',
         album: '1123',
         artistes: ['BJ The Chicago Kid', 'PJ Morton'],
-        cover:
-            'https://images-na.ssl-images-amazon.com/images/I/819ZC91FLfL._SL1200_.jpg',
+        cover: '/images/notcomingback.jpg',
         liked: false,
         explicit: false,
     },

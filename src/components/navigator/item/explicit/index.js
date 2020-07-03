@@ -7,7 +7,6 @@ const Wrapper = styled.div`
     max-width: 12px;
     display: flex;
     align-items: center;
-    opacity: 0.85;
 `
 
 const IconWrapper = styled(Icon)`

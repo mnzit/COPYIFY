@@ -35,7 +35,7 @@ export default function Mini() {
 
     const props = useSpring({
         transform: `translateY(${playerDown ? '-100%' : '0%'})`,
-        opacity: isSomethingPlaying ? 1 : 0,
+        display: isSomethingPlaying && playerDown ? 'block' : 'none',
     })
 
     return isSomethingPlaying ? (
